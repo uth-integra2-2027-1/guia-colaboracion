@@ -6,6 +6,8 @@ Universidad Tecnológica de Hermosillo · Docente: Bernardo Prado Díaz · del 1
 
 Todos contribuyen y todos revisan. **Integra2 lo verifica en GitHub y descuenta sólo a quien no cumple.**
 
+> 🧭 **¿Nunca has usado GitHub?** Empieza por **[GitHub paso a paso](github-paso-a-paso.md)**: perfil con foto y nombre, issues, tablero, tarjetas, PR, revisión y merge.
+
 ## Contenido
 
 1. [Las 5 reglas](#1-las-5-reglas)
