@@ -25,8 +25,8 @@ Todos contribuyen y todos revisan. **Integra2 lo verifica en GitHub y descuenta 
 | # | Regla | Qué significa |
 |---|---|---|
 | 1 | **Nadie sube directo a main** | Cada quien trabaja en su propia rama y propone sus cambios con un Pull Request (PR). |
-| 2 | **Otro integrante aprueba** | Un PR sólo cuenta si lo aprueba alguien distinto al autor antes del merge. |
-| 3 | **Todos revisan** | Cada unidad revisas al menos 1 PR de un compañero, en máximo 48 h. |
+| 2 | **Tu revisor asignado aprueba** | Un PR sólo cuenta si lo aprueba otro integrante antes del merge; quién revisa a quién está definido desde el inicio. |
+| 3 | **Todos revisan** | Cada unidad revisas los PR de tu compañero asignado en máximo 48 h, y al menos 1 PR en total. |
 | 4 | **Un rol por unidad** | Coordinador organiza, integrador cuida main, documentador sube evidencias e informe, QA prueba que todo funcione. Rota cada unidad. |
 | 5 | **Descuento individual** | Si un compañero falla, el descuento es sólo suyo. |
 
@@ -76,7 +76,7 @@ gitGraph
    git commit -m "Agrega vista de escaneo con lector USB #12"
    git push -u origin 12-registro-qr
    ```
-4. **Abre el Pull Request** (*Compare & pull request*), base `main`, con `Closes #12`, qué cambiaste y cómo probarlo. Elige un revisor.
+4. **Abre el Pull Request** (*Compare & pull request*), base `main`, con `Closes #12`, qué cambiaste y cómo probarlo. Elige a tu revisor asignado (lo ves en tu portal).
 5. **Un compañero revisa:** *Files changed* → *Review changes* → *Approve* o *Request changes*. Si piden cambios, corrige en la misma rama y haz `git push`.
 6. **El integrador hace el merge** (*Merge pull request* o *Squash and merge*) y borra la rama. Si no lo hace en 48 h desde la aprobación, lo hace otro integrante (rescate); antes de ese plazo, fusionar el PR de otro sin ser el integrador resta puntos.
 7. **Todos actualizan:**
@@ -89,6 +89,33 @@ gitGraph
 > ⛔ **Prohibido:** `git push` a main, fusionar sin aprobación o hacer *force-push*. Integra2 lo detecta aunque GitHub no lo bloquee.
 >
 > 💡 Tus commits en tu rama **sí cuentan** para tu constancia desde que haces push.
+
+## ✔ ¿Quién aprueba, cuándo y dónde?
+
+Queda **definido desde el inicio del curso**: en cada unidad, cada integrante tiene un **compañero asignado** cuyos PR debe revisar. Las parejas rotan cada unidad por orden de matrícula. Con nombres, la tabla de tu equipo está en tu portal (**Plan del equipo**).
+
+- **Quién:** tu revisor asignado de la unidad («Tus PR los revisa…» en tu portal).
+- **Cuándo:** en máximo **48 h** desde que se abre el PR (*Approve* o *Request changes*).
+- **Dónde:** GitHub → *Pull requests* → abrir el PR → *Files changed* → *Review changes*.
+- Al abrir tu PR, en *Reviewers* elige a tu revisor asignado. Cualquier otro integrante también puede aprobar.
+- Nadie aprueba su propio PR y nadie de fuera del equipo aprueba.
+
+**Equipo de 4: a quién revisas**
+
+| Posición | U1 (desde 11 ene) | U2 (desde 18 ene) | U3 (desde 1 feb) | U4 (desde 22 feb) |
+|---|---|---|---|---|
+| 1 | Posición 2 | Posición 3 | Posición 4 | Posición 2 |
+| 2 | Posición 3 | Posición 4 | Posición 1 | Posición 3 |
+| 3 | Posición 4 | Posición 1 | Posición 2 | Posición 4 |
+| 4 | Posición 1 | Posición 2 | Posición 3 | Posición 1 |
+
+**Equipo de 3: a quién revisas**
+
+| Posición | U1 (desde 11 ene) | U2 (desde 18 ene) | U3 (desde 1 feb) | U4 (desde 22 feb) |
+|---|---|---|---|---|
+| 1 | Posición 2 | Posición 3 | Posición 2 | Posición 3 |
+| 2 | Posición 3 | Posición 1 | Posición 3 | Posición 1 |
+| 3 | Posición 1 | Posición 2 | Posición 1 | Posición 2 |
 
 ## 4. Roles
 
@@ -326,13 +353,15 @@ Por alumno y por unidad, de la parte técnica (0–100). Tope total de penalizac
 
 | Situación | Resta |
 |---|---|
-| No tienes ningún Pull Request tuyo fusionado a main en la unidad con la aprobación de otro integrante (o del docente). | −10 |
+| No tienes ningún Pull Request tuyo fusionado a main en la unidad con la aprobación de otro integrante (no aplica si abriste tu PR a tiempo y nadie lo revisó en 48 h). | −10 |
 | No revisaste (aprobar, pedir cambios o comentar) ningún Pull Request de un compañero en la unidad. | −5 |
+| Por cada PR de tu compañero asignado que no revisaste en 48 h desde que lo abrió (si nadie más lo aprobó en ese plazo); máximo 9 puntos. | −3 |
 | Por cada commit tuyo que llegó a main sin Pull Request (desde la Unidad 2); máximo 10 puntos. | −2 |
 | Por cada PR de un compañero que fusionaste sin ser el integrador antes de 48 h desde su aprobación (después de 48 h es rescate y no resta); máximo 6 puntos. | −2 |
 | No cumpliste la tarea verificable de tu rol de la unidad (coordinador, integrador, documentador o QA). | −5 |
 
-- Un PR **cuenta para su autor** si se fusionó a main dentro de la unidad y antes lo aprobó otro integrante o el docente (@BernardoPD).
+- Un PR **cuenta para su autor** si se fusionó a main dentro de la unidad y antes lo aprobó otro integrante del equipo.
+- El **revisor asignado** tiene 48 h desde que se abre cada PR de su compañero; si no revisa y nadie más aprueba, se le descuenta a él y al autor no se le descuenta «sin PR».
 - Una **revisión cuenta** si es *Approve*, *Request changes* o *Comment* en un PR de un compañero, dentro de la unidad.
 - Un **commit directo** es uno tuyo que llegó a main sin PR. En la Unidad 1 sólo se avisa; desde la Unidad 2 resta.
 - **El merge le toca al integrador:** fusionar el PR de un compañero sin serlo, antes de 48 h desde su aprobación, te resta a ti (al integrador no). Después es rescate. Crear issues, documentar o revisar nunca se castiga.
@@ -340,7 +369,7 @@ Por alumno y por unidad, de la parte técnica (0–100). Tope total de penalizac
 
 ## 6. Si alguien no cumple, no afecta a los demás
 
-- ✅ **Aprobar no depende de una persona:** cualquier compañero aprueba; si nadie responde en 48 h, pide la revisión al docente (@BernardoPD).
+- ✅ **Si tu revisor no cumple, no pagas tú:** tu revisor asignado tiene 48 h; si no revisa y nadie más aprueba, el descuento es suyo. Cualquier otro compañero puede aprobar para que tu PR avance.
 - ✅ **El merge tampoco:** el integrador tiene 48 h desde la aprobación; si no fusiona, otro integrante lo hace como rescate y sólo el integrador pierde su rol.
 - ✅ **Tu módulo es tuyo:** los puntos del módulo y la constancia son individuales.
 - ⚠️ **Regla 48/72 h:** a las 48 h sin avance el coordinador marca el issue «en riesgo»; a las 72 h se reasigna y el crédito es de quien lo entregó.

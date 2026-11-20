@@ -101,7 +101,7 @@ GitHub está en inglés: los botones aparecen en **negritas** tal como se ven, c
 3. Revisa que diga **base: main ← compare: 12-registro-qr**.
 4. El título ya viene escrito; ajústalo para que diga qué hace el cambio.
 5. En la descripción llena la plantilla: `Closes #12`, qué cambiaste, cómo probarlo y una captura.
-6. A la derecha, en **Reviewers** (revisores), elige a uno o dos compañeros.
+6. A la derecha, en **Reviewers** (revisores), elige a **tu revisor asignado** de la unidad (lo ves en tu portal: «Tus PR los revisa…»).
 7. Pulsa **Create pull request**. Mueve tu tarjeta a **En revisión** y avisa al equipo.
 
 > ⚠️ Si te piden cambios, corrige en la misma rama y haz `git push`: el PR se actualiza solo, no abras otro.
@@ -110,9 +110,9 @@ GitHub está en inglés: los botones aparecen en **negritas** tal como se ven, c
 
 ## 6. 🔎 Revisar el PR de un compañero
 
-**Quién:** Cualquier integrante distinto al autor (el QA revisa al menos 2) · **Cuándo:** En menos de 48 h desde que te lo piden
+**Quién:** Tu revisor asignado (definido desde el inicio en tu portal); cualquier otro integrante también puede revisar · **Cuándo:** En máximo 48 h desde que se abre el PR
 
-**Para qué:** Revisar evita que entren errores a main y es obligatorio: cada unidad debes revisar al menos un PR.
+**Para qué:** Revisar evita que entren errores a main y es obligatorio: cada unidad revisas los PR de tu compañero asignado. Si pasan 48 h sin tu revisión y nadie más lo aprobó, se te descuenta a ti.
 
 1. Entra a la pestaña **Pull requests** y abre el PR de tu compañero.
 2. Lee la descripción: qué cambió y cómo probarlo.
