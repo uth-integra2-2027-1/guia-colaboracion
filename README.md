@@ -76,7 +76,7 @@ gitGraph
    ```
 4. **Abre el Pull Request** (*Compare & pull request*), base `main`, con `Closes #12`, qué cambiaste y cómo probarlo. Elige un revisor.
 5. **Un compañero revisa:** *Files changed* → *Review changes* → *Approve* o *Request changes*. Si piden cambios, corrige en la misma rama y haz `git push`.
-6. **El integrador hace el merge** (*Merge pull request* o *Squash and merge*) y borra la rama. Si no está en 48 h, lo hace otro integrante.
+6. **El integrador hace el merge** (*Merge pull request* o *Squash and merge*) y borra la rama. Si no lo hace en 48 h desde la aprobación, lo hace otro integrante (rescate); antes de ese plazo, fusionar el PR de otro sin ser el integrador resta puntos.
 7. **Todos actualizan:**
    ```bash
    git switch main
@@ -221,7 +221,7 @@ Posición 1 = la matrícula más baja. Tu rol de cada unidad aparece en tu porta
 
 > ✅ **Lo que revisa Integra2:** Fusionaste (merge) al menos un PR de un compañero dentro de la unidad. Si no se cumple: **−5** sólo a quien tiene el rol.
 >
-> 💡 Si no estás, cualquier otro integrante puede hacer el merge. Sólo a ti se te descuenta el rol.
+> 💡 Tienes 48 h desde la aprobación para hacer el merge; después cualquier otro integrante puede hacerlo como rescate y sólo a ti se te descuenta el rol. Si otro fusiona antes de esas 48 h, se le descuenta a él y a ti no.
 
 ### 📝 Documentador
 
@@ -327,17 +327,19 @@ Por alumno y por unidad, de la parte técnica (0–100). Tope total de penalizac
 | No tienes ningún Pull Request tuyo fusionado a main en la unidad con la aprobación de otro integrante (o del docente). | −10 |
 | No revisaste (aprobar, pedir cambios o comentar) ningún Pull Request de un compañero en la unidad. | −5 |
 | Por cada commit tuyo que llegó a main sin Pull Request (desde la Unidad 2); máximo 10 puntos. | −2 |
+| Por cada PR de un compañero que fusionaste sin ser el integrador antes de 48 h desde su aprobación (después de 48 h es rescate y no resta); máximo 6 puntos. | −2 |
 | No cumpliste la tarea verificable de tu rol de la unidad (coordinador, integrador, documentador o QA). | −5 |
 
 - Un PR **cuenta para su autor** si se fusionó a main dentro de la unidad y antes lo aprobó otro integrante o el docente (@BernardoPD).
 - Una **revisión cuenta** si es *Approve*, *Request changes* o *Comment* en un PR de un compañero, dentro de la unidad.
 - Un **commit directo** es uno tuyo que llegó a main sin PR. En la Unidad 1 sólo se avisa; desde la Unidad 2 resta.
+- **El merge le toca al integrador:** fusionar el PR de un compañero sin serlo, antes de 48 h desde su aprobación, te resta a ti (al integrador no). Después es rescate. Crear issues, documentar o revisar nunca se castiga.
 - Si GitHub no responde al evaluar, **no se descuenta nada** por colaboración.
 
 ## 6. Si alguien no cumple, no afecta a los demás
 
 - ✅ **Aprobar no depende de una persona:** cualquier compañero aprueba; si nadie responde en 48 h, pide la revisión al docente (@BernardoPD).
-- ✅ **El merge tampoco:** si el integrador falta, otro integrante fusiona; sólo el integrador pierde su rol.
+- ✅ **El merge tampoco:** el integrador tiene 48 h desde la aprobación; si no fusiona, otro integrante lo hace como rescate y sólo el integrador pierde su rol.
 - ✅ **Tu módulo es tuyo:** los puntos del módulo y la constancia son individuales.
 - ⚠️ **Regla 48/72 h:** a las 48 h sin avance el coordinador marca el issue «en riesgo»; a las 72 h se reasigna y el crédito es de quien lo entregó.
 - ⚠️ **Partes de equipo** (evidencias, entregables, app): si alguien no aportó, avisen al docente con los issues como prueba; puede aplicar un ajuste individual.
